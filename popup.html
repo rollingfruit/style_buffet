@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="top-section">
+      <div class="image-upload human-image">
+        <input type="file" id="humanImage" accept="image/jpeg, image/png" style="display: none;">
+        <div class="plus-icon" id="humanImageUpload">+</div>
+        <img id="humanPreview" class="preview" alt="人物图像预览">
+        <div class="delete-icon" id="deleteHuman">×</div>
+      </div>
+      <div class="image-upload cloth-image" id="clothImageContainer">
+        <img id="clothPreview" class="preview" alt="服装图像预览">
+        <div class="paste-instruction">点击此处粘贴想要试穿的图片</div>
+        <div class="delete-icon" id="deleteCloth">×</div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button id="tryOnButton" class="try-on-button" disabled>试穿</button>
+      <button id="getTokenButton" class="get-token-button">获取试衣机会</button>
+    </div>
+    <div id="tokenInputContainer" class="token-input-container" style="display: none;">
+      <input type="text" id="tokenInput" placeholder="请输入 ACCESS_TOKEN">
+      <input type="number" id="tokenDuration" placeholder="有效时间（分钟）" value="3" min="1" max="60">
+      <button id="submitToken">确定</button>
+    </div>
+    <div id="tokenCountdown" class="token-countdown" style="display: none;"></div>
+    <div class="bottom-section" id="result">
+      <p>请上传人物图像和粘贴服装图像</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
